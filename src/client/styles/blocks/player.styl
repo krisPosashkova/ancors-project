@@ -1,47 +1,77 @@
-.player {
-    height: 58px;
-    width: 371px;
-    max-width: 371px;
-    background-color:  #000000;
-    display: flex;
-    align-items: center;
-    gap: 82px;
-    position: absolute;
-    bottom: -1px;
-    right: -2px;
-    border-radius: 30px 0 0;
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
+.player 
+  height: 58px
+  width: 371px
+  max-width: 371px
+  background-color: $color-dark
+  display: flex
+  align-items: center
+  gap: 82px
+  position: absolute
+  bottom: -1px
+  right: -2px
+  border-radius: 30px 0 0
+  border-top: 1px solid $color-base
+  border-left: 1px solid $color-base
 
-    &__icon {
-        margin-left: 48px;
-        cursor: pointer;
+  &__icon 
+    margin-left: 48px
+    cursor: pointer
 
-        :hover {
-            opacity: 0.7;
-            transition: 0.4s;
-        }
-    }
+    &:hover 
+      opacity: 0.7
+      transition: 0.4s
+    
+  &__track-bar 
+    background-image: url(../images/player-track.png)
+    width: 127px
+    height: 12px
+    background-size: cover
+    background-repeat: repeat-x
+    animation: animatedBackground 20s linear infinite
+  
+  &__edge_bottom 
+    position: absolute
+    bottom: -11px
+    left: -31px
+  
+  &__edge_top 
+    position: absolute
+    top: -31px
+    right: -10px
+  
+  &__edge_top::after,
+  &__edge_bottom:after 
+    display: block
+    content: ''
+    width: 30px
+    height: 30px
+    border-right: 13px solid $color-dark
+    border-bottom: 13px solid $color-dark
+    -webkit-border-radius: 0 0 100px 0
+    -moz-border-radius: 0 0 100px 0
+    border-radius: 0 0 37px 0
 
 
-    &__track-bar {
-        background-image: url(../images/player-track.png);
-        width: 127px;
-        height: 12px;
-        background-size: cover;
-        background-repeat: repeat-x;
-        animation: animatedBackground 20s linear infinite;
-    }
+  &__edge_bottom::before,
+  &__edge_top:before 
+    display: block
+    position: absolute
+    content: ''
+    width: 30px
+    height: 30px
+    top: 0px
+    right: 12px
+    border-right: 1px solid $color-base
+    border-bottom: 1px solid $color-base
+    -webkit-border-radius: 0 0 100px 0
+    -moz-border-radius: 0 0 100px 0
+    border-radius: 0 0 30px 0
 
-}
-
-@keyframes animatedBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 500px 0;
-  }
-}
+@keyframes animatedBackground 
+  from 
+    background-position: 0 0
+  
+  to 
+    background-position: 500px 0
 
 

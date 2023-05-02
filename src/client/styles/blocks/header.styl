@@ -1,39 +1,76 @@
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid;
-    &__list {
-        display: flex;
-        text-transform: uppercase;
-        gap: 36px;
-        margin: 19px 0 17px;
-    }
-    &__list-item:hover {
-        opacity: 0.7;
-        transition: 0.4s;
-    }
-    &__list-item:active {
-        opacity: 0.3;
-        transition: 0.4s;
-    }
-    &__item {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        font-size: 34px;
-        line-height: 24px;
-        position: absolute;
-        margin-top: 18px;
-        left: 50%;
-        top: 19px;
-        border: 1px solid;
-        border-bottom: transparent;
-        border-radius: 15px 15px 0 0;
-        background-color: #000;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-        padding: 12px 22px 13px 22px;
-    }
-}
+.navigation 
+  display: flex
+  justify-content: space-between
+  border-bottom: 1px solid
 
+  &__list 
+    display: flex
+    text-transform: uppercase
+    gap: 36px
+    margin: 19px 0 17px
+  
+  &__list-item 
+    &:hover 
+      opacity: 0.7
+      transition: 0.4s
+    
+    &:active 
+      opacity: 0.3
+      transition: 0.4s
+    
+.active 
+  &__item 
+    position: absolute
+    margin-top: 18px
+    left: 50%
+    top: 18px
+    border: 1px solid
+    border-bottom: transparent
+    border-radius: 15px 15px 0 0
+    background-color: $color-dark
+    -ms-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+    cursor: pointer
+    padding: 12px 22px 13px 22px
+  
+  &__link 
+    font-family: 'Inter', sans-serif
+    font(34px, 24px, 500)
 
+  &__item-edge_left 
+    position: absolute
+    bottom: -10px
+    left: -21px
+
+  &__item-edge_right 
+    position: absolute
+    bottom: -10px
+    right: -21px
+    transform: rotate(90deg)
+
+  &__item-edge_left::after,
+  &__item-edge_right:after 
+    display: block
+    content: ''
+    width: 20px
+    height: 20px
+    border-right: 13px solid $color-dark
+    border-bottom: 13px solid $color-dark
+    -webkit-border-radius: 0 0 100px 0
+    -moz-border-radius: 0 0 100px 0
+    border-radius: 0 0 25px 0
+  
+  &__item-edge_left::before,
+  &__item-edge_right:before 
+    display: block
+    position: absolute
+    content: ''
+    width: 20px
+    height: 20px
+    top: 0px
+    right: 12px
+    border-right: 1px solid $color-base
+    border-bottom: 1px solid $color-base
+    -webkit-border-radius: 0 0 100px 0
+    -moz-border-radius: 0 0 100px 0
+    border-radius: 0 0 15px 0

@@ -4,10 +4,12 @@
 	<title>{{serverData.data.title}}</title>
 	{% include "templates/head.njk" %}
 </head>
-{% include "templates/header.html" %}
 <body>
-	{% include "templates/main.njk" %}
-	<!-- Footer Scripts -->
-
+	{% include "templates/header.njk" %}
+	<main class="main">
+		<div class="container">
+			{% include "templates/banner.njk" %}
+		</div>
+	</main>
 </body>
 </html>

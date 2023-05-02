@@ -1,55 +1,57 @@
-.carousel {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    &__wrapper {
-        position: relative;  
-        display:flex;
-        justify-content: space-between;
-        width: 162px;
-    }
+.carousel 
+  position: absolute
+  transform: translate(-50%, -50%)
+  left: 50%
 
-    &__btn {
-        color: #FFFFFF;
-        padding: 12px 22px;
-        background-color: #000000;
-        width: 50%;
-        margin: auto;
-        border: 0.5px solid #FFFFFF;
-    }
+  &__wrapper 
+    position: relative; 
+    display: flex
+    justify-content: space-between
+    width: 162px
+  
+  &__btn 
+    color: $color-base
+    padding: 12px 22px
+    background-color: $color-dark
+    width: 50%
+    margin: auto
+    border: 0.5px solid $color-base
+    cursor: pointer
+  
+  &__btn-back 
+    border-radius: 30px 0 0 30px
+  
+  &__btn-next 
+    border-radius: 0 30px 30px 0
+  
+  &__back-icon 
+    float: left
+    height: 18px
 
-    &__btn-back {
-        border-radius: 30px 0 0 30px;
-    }
+  &__next-icon 
+    float: right
+    height: 18px
+  
+  &__btn-stop 
+    position: absolute
+    padding: 19px
+    border-radius: 100%
+    border: 0.5px solid $color-base
+    background-color: $color-dark
+    transform: translate(-50%, -50%)
+    left: 50%
+    top: 50%
+    cursor: pointer
+  
+  &__stop-icon 
+    display: block
+    height: 16px
+    transform: rotate(45deg)
+  
+  &__btn-back:hover &__back-icon path,
+  &__btn-next:hover &__next-icon path,
+  &__btn-stop:hover &__stop-icon path 
+    cursor: pointer
+    translate: 0.4s
+    fill: rgba(255, 255, 255, 0.7)
 
-    &__btn-next {
-        border-radius: 0 30px 30px 0;
-    }
-
-    &__back-icon {
-        float: left;
-        height: 18px;
-    }
-
-    &__next-icon {
-        float: right;
-        height: 18px;
-    }
-
-    &__btn-stop {
-        position: absolute;
-        padding: 19px;
-        border-radius: 100%;
-        border: 0.5px solid #FFFFFF;
-        background-color: #000000;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-    }
-
-    &__stop-icon {
-        display: block;
-        height: 16px;
-        transform: rotate(45deg);
-    }
-}

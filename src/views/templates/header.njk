@@ -1,0 +1,68 @@
+<header class="header">
+	<div class="container">
+		<nav class="navigation">
+      {% set links = [
+        {
+          link: '#',
+          text: 'Records'
+        },
+        {
+          link: '#',
+          text: 'Join discord'
+        },
+        {
+          link: 'index.html',
+          text: 'Experience'
+        }
+      ]%}
+      <ul class="navigation__list">
+        {% for link in links %}
+          {% if loop.index === 3 %}
+            <li class="active__item">
+              <div class="active__item-edge_left"></div>
+                <a class="active__link" href="{{link.link}}">{{link.text}}</a>
+              <div class="active__item-edge_right"></div>
+            </li>
+          {% else %}
+            <li class="navigation__list-item">
+              <div class="active__item-edge_left hidden"></div>
+                <a class="font-base"  href="{{link.link}}">{{link.text}}</a>
+              <div class="active__item-edge_right hidden"></div>
+            </li>
+            {% endif%}
+        {% endfor %}
+      </ul>
+        {% set links = [
+          {
+            link: '#',
+            text: 'Drops'
+          },
+          {
+            link: '#',
+            text: 'Products'
+          },
+          {
+            link: '#',
+            text: 'Contact'
+          }
+        ]%}
+      <ul class="navigation__list">
+        {% for link in links %}
+          {% if loop.index === 0 %}
+            <li class="active__item">
+              <div class="active__item-edge_left"></div>
+                <a class="active__link" href="{{link.link}}">{{link.text}}</a>
+              <div class="active__item-edge_right"></div>
+            </li>
+          {% else %}
+            <li class="navigation__list-item">
+              <div class="active__item-edge_left hidden"></div>
+                <a class="font-base" href="{{link.link}}">{{link.text}}</a>
+              <div class="active__item-edge_right hidden"></div>
+            </li>
+            {% endif%}
+        {% endfor %}
+      </ul>
+		</nav>
+	</div>
+</header>

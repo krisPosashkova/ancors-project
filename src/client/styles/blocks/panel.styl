@@ -1,81 +1,110 @@
-.panel {
-    width: 371px;
-    height: 58px;
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 0 0 0 30px;
-    border-bottom: 1px solid;
-    border-left: 1px solid;
+.panel 
+  width: 371px
+  height: 58px
+  position: absolute
+  top: -2px
+  right: -2px
+  background-color: $color-dark
+  display: flex
+  align-items: center
+  justify-content: space-around
+  border-radius: 0 0 0 30px
+  border-bottom: 1px solid
+  border-left: 1px solid
 
-    &__item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+  &__item 
+    display: flex
+    align-items: center
+    gap: 10px
+  
+  &__item-circle 
+    width: 22px
+    height: 22px
+    border-radius: 100%
+    border: 1px solid $color-base
+    position: relative
+  
+  &__item-circle::before 
+    content: ''
+    position: absolute
+    width: 21px
+    background-color: $color-base
+    height: 1px
+    transform: rotate(-45deg)
+    top: 50%
+  
+  &__item-line 
+    height: 2px
+    width: 13px
+    background-color: $color-base
+  
+  &__item-dot 
+    width: 13px
+    height: 13px
+    border-radius: 100%
+    border: 1px solid $color-base
 
-    }
+    &_fill 
+      width: 13px
+      height: 13px
+      border-radius: 100%
+      border: 1px solid $color-base
+      background-color: $color-base
     
-    &__item-circle {
-        width: 22px;
-        height: 22px;
-        border-radius: 100%;
-        border: 1px solid #ffffff;
-        position: relative;
-    }
+  &__center-circle 
+    width: 22px
+    height: 22px
+    border-radius: 100%
+    border: 1px solid $color-base
+    position: relative
 
-    &__item-circle::before {
-        content: '';
-        position: absolute;
-        width: 21px;
-        background-color: #fff;
-        height: 1px;
-        transform: rotate(-45deg);
-        top: 50%;
-    }
-
-    &__item-line {
-        height: 2px;
-        width: 13px;
-        background-color: #fff; 
-    }
-
-    &__item-dot {
-        width: 13px;
-        height: 13px;
-        border-radius: 100%;
-        border: 1px solid #ffffff;
-
-        &_fill {
-            width: 13px;
-            height: 13px;
-            border-radius: 100%;
-            border: 1px solid #ffffff;
-            background-color: #ffffff;
-        }
-    }
-
-    &__center-circle {
-        width: 22px;
-        height: 22px;
-        border-radius: 100%;
-        border: 1px solid #ffffff;
-        position: relative;
-    }
-
-    &__center-circle::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border-radius: 100%;
-            border: 0.5px solid #ffffff;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 50%;
-        }
-}
+  &__center-circle::before 
+    content: ''
+    position: absolute
+    width: 12px
+    height: 12px
+    border-radius: 100%
+    border: 0.5px solid $color-base
+    transform: translate(-50%, -50%)
+    left: 50%
+    top: 50%
+  
+  &__edge_bottom 
+    position: absolute
+    bottom: -31px
+    right: -10px
+    transform: rotate(-90deg)
+  
+  &__edge_top 
+    position: absolute
+    top: -10px;
+    left: -31px;
+    transform: rotate(-90deg)
+  
+  &__edge_top::after,
+  &__edge_bottom:after 
+    display: block
+    content: ''
+    width: 30px
+    height: 30px
+    border-right: 13px solid $color-dark
+    border-bottom: 13px solid $color-dark
+    -webkit-border-radius: 0 0 100px 0
+    -moz-border-radius: 0 0 100px 0
+    border-radius: 0 0 37px 0
+  
+  &__edge_bottom::before,
+  &__edge_top:before 
+    display: block
+    position: absolute
+    content: ''
+    width: 30px
+    height: 30px
+    top: 0px
+    right: 12px
+    border-right: 1px solid $color-base
+    border-bottom: 1px solid $color-base
+    -webkit-border-radius: 0 0 100px 0
+    -moz-border-radius: 0 0 100px 0
+    border-radius: 0 0 30px 0
 
